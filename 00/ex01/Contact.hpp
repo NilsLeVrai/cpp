@@ -6,9 +6,11 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:54:08 by niabraha          #+#    #+#             */
-/*   Updated: 2024/11/18 11:52:48 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/11/18 12:03:49 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <iostream>
 #include <string>
