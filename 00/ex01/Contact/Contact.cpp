@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:56:52 by niabraha          #+#    #+#             */
-/*   Updated: 2024/11/18 11:53:28 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/11/18 12:33:58 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Contact::Contact( void ) {
 Contact::~Contact( void ) {
 	std::cout << "bite detruite" << std::endl;
 }
-
 
 std::string Contact::getFirstName(){
 	return (this->_firstName);

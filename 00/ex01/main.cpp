@@ -6,24 +6,20 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:33:46 by niabraha          #+#    #+#             */
-/*   Updated: 2024/11/18 12:17:39 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/11/18 12:48:09 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include "Contact.hpp"
-#include "Phonebook.hpp"
-
-#include <iostream>
-#include <string>
+#include "includes/phonebook.hpp"
 
 int searchContact(Phonebook *phoneBook){
-	
+	std::cout << "SEARCH" << std::endl;
+	return (0);
 }
 
 int addContact(Phonebook *phoneBook){
-	
+	std::cout << "ADD" << std::endl;
+	return (0);
 }
 
 int main()
@@ -44,7 +40,7 @@ int main()
 				return (1);
 		}
 		else if (param.compare("EXIT") == 0){
-			if (exit(0));
+			exit(0);
 		}
 		else
 			std::cout << "Please, write either \"ADD\", \"SEARCH\" or \"EXIT\"" << std::endl;

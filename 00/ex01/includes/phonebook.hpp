@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 15:52:33 by niabraha          #+#    #+#             */
-/*   Updated: 2024/11/18 08:57:56 by niabraha         ###   ########.fr       */
+/*   Created: 2024/11/18 12:48:31 by niabraha          #+#    #+#             */
+/*   Updated: 2024/11/18 12:52:32 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef PHONEBOOK_H
+#define PHONEBOOK_H
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include "../Contact/Contact.hpp"
+#include "../Phonebook/Phonebook.hpp"
 
-class PhoneBook {
-	private:
-	array contact[8];
-
-	public:
-	PhoneBook(); //rajouter les parametres
-	~PhoneBook();
-};
+#endif

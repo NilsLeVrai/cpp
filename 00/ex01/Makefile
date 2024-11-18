@@ -1,20 +1,32 @@
 NAME = phonebook
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
-SRCS = main.cpp \
-		Contact.cpp
-OBJS = $(SRCS:.cpp=.o)
+
+INCLUDES = -I ./includes/
+
+SRC_DIR = .
+BIN_DIR = ./bin
+
+SOURCES =  main.cpp \
+			Contact/Contact.cpp \
+			Phonebook/Phonebook.cpp
+
+OBJECTS = $(addprefix $(BIN_DIR)/,$(SOURCES:.cpp=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
+
+$(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@ $(INCLUDES)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(BIN_DIR)
 
 fclean: clean
-	rm -f $(NAME) $(OBJS)
+	rm -f $(NAME)
 
 re: fclean all
 
