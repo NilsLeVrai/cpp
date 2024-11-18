@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 15:52:33 by niabraha          #+#    #+#             */
-/*   Updated: 2024/11/14 15:53:59 by niabraha         ###   ########.fr       */
+/*   Created: 2024/11/18 08:33:46 by niabraha          #+#    #+#             */
+/*   Updated: 2024/11/18 10:09:46 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Contact.hpp"
 
-class PhoneBook
+int main()
 {
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void	add_contact();
-		void	search_contact();
-	private:
-		int		_index;
-		Contact	_contacts[8];
-};
+	Contact contact;
+}
