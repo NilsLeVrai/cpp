@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 12:48:31 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/06 16:05:14 by niabraha         ###   ########.fr       */
+/*   Created: 2024/11/14 15:52:33 by niabraha          #+#    #+#             */
+/*   Updated: 2024/12/10 17:04:06 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef phonebook_H
-#define phonebook_H
+#include "Contact.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "../Contact/Contact.hpp"
-#include "../PhoneBook/PhoneBook.hpp"
+class PhoneBook {
+	private:
+	Contact phoneDirectory[2];
+	int latestContact;
 
-#endif
+	public:
+	PhoneBook();
+	void addContact(void);
+	void searchContact(void);
+};

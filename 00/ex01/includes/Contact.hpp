@@ -6,14 +6,14 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:54:08 by niabraha          #+#    #+#             */
-/*   Updated: 2024/11/18 12:03:49 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:04:10 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <string>
+#include <iomanip>
 
 class Contact{
 	private:
@@ -26,7 +26,6 @@ class Contact{
 
 	public:
 		Contact( void );
-		~Contact( void );
 		std::string getFirstName();
 		void 		setFirstName(std::string);
 		std::string getLastName();
@@ -37,4 +36,6 @@ class Contact{
 		void 		setPhoneNumber(std::string);
 		std::string getDarkestSecret();
 		void 		setDarkestSecret(std::string);
+		void 		proceed();
+		void 		displayContact();
 };

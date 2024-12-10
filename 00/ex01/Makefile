@@ -8,10 +8,10 @@ SRC_DIR = .
 BIN_DIR = ./bin
 
 SOURCES =  main.cpp \
-			Contact/Contact.cpp \
-			PhoneBook/PhoneBook.cpp
+			Contact.cpp \
+			PhoneBook.cpp
 
-OBJECTS = $(addprefix $(BIN_DIR)/,$(SOURCES:.cpp=.o))
+OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
 

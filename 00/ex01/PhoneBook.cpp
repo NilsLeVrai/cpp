@@ -6,32 +6,44 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:08:33 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/02 12:05:35 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/10 17:04:01 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "PhoneBook.hpp"
-#include <iostream>
+#include "includes/PhoneBook.hpp"
 
 PhoneBook::PhoneBook() {
-	std::cout << "PhoneBook created" << std::endl;
+	this->latestContact = 0;
 }
 
-PhoneBook::~PhoneBook() {
-	std::cout << "PhoneBook destroyed" << std::endl;
-}
+void PhoneBook::addContact(void) {
 
-void PhoneBook::addContact(const Contact& contact) {
-	if (contacts.size() < 8) {
-		contacts.push_back(contact);
-	} else {
-		std::cerr << "PhoneBook is full. Cannot add more contacts." << std::endl;
+	if (this->latestContact < 2)
+	{
+		this->phoneDirectory[this->latestContact].proceed();
+		this->latestContact++;
+	}
+	else
+	{
+		std::cout << "Phonebook is full. Replacing this new contact with the oldest one." << std::endl;
 	}
 }
 
-void PhoneBook::displayContacts() const {
-	for (size_t i = 0; i < contacts.size(); ++i) {
-		std::cout << "Contact " << i + 1 << ": " << contacts[i].getName() << std::endl;
+void PhoneBook::searchContact(void) {
+	
+	if (this->latestContact == 0) {
+		std::cout << "Phonebook is empty." << std::endl;
+		return;
+	}
+	std::cout << "Enter the index of the contact you want to search: ";
+	int index;
+	std::cin >> index;
+
+	if (index < 0 || index > 8) {
+		std::cout << "Out of range, this index is not valid." << std::endl;
+		return;
+	}
+	if (index < this->latestContact) {
+		this->phoneDirectory[index].displayContact();
 	}
 }
