@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:33:46 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/12 16:25:27 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/12 18:05:14 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main()
 		else if (param == "SEARCH")
 		{
 			repertory.searchContact();
+			//break;
 		}
 		else if (param == "EXIT")
 		{

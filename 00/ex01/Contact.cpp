@@ -6,12 +6,11 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:56:52 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/12 16:53:06 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/12 18:54:04 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/Contact.hpp"
-#include <iostream>
 
 Contact::Contact( void ) {
 	this->_firstName = "";
@@ -20,9 +19,7 @@ Contact::Contact( void ) {
 	this->_phoneNumber = "";
 	this->_darkestSecret = "";
 }
-/*
-Un seul
-*/
+
 void Contact::displaySpecificContact(int i) {
 
 	std::cout << std::setw(10) << i << "|";
@@ -53,9 +50,6 @@ void Contact::displaySpecificContact(int i) {
 	std::cout << std::endl << std::endl;
 }
 
-/*
-tous les contacts
-*/
 void Contact::displayAllContact() {
 	std::cout << std::left;
 	std::cout << std::setw(16) << "First name: " << this->_firstName << std::endl;
@@ -63,12 +57,8 @@ void Contact::displayAllContact() {
 	std::cout << std::setw(16) << "Nickname: " << this->_nickname << std::endl;
 	std::cout << std::setw(16) << "Phone number: " << this->_phoneNumber << std::endl;
 	std::cout << std::setw(16) << "Darkest secret: " << this->_darkestSecret << std::endl;
-	
 }
 
-/* void Contact::replaceContact() {
-	
-} */
 void Contact::proceed() {
 
 	do {
