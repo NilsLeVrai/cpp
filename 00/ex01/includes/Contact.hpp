@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:54:08 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/10 17:04:10 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:35:07 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 class Contact{
 	private:
@@ -37,5 +38,6 @@ class Contact{
 		std::string getDarkestSecret();
 		void 		setDarkestSecret(std::string);
 		void 		proceed();
-		void 		displayContact();
+		void 		displaySpecificContact(int i);
+		void		displayAllContact();
 };

@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:56:52 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/10 17:11:22 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:53:06 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,50 @@ Contact::Contact( void ) {
 	this->_phoneNumber = "";
 	this->_darkestSecret = "";
 }
+/*
+Un seul
+*/
+void Contact::displaySpecificContact(int i) {
 
-void Contact::displayContact() {
+	std::cout << std::setw(10) << i << "|";
+	if (this->_firstName.size() > 10) {
+		std::cout << this->_firstName.substr(0, 9) << ".";
+		std::cout << "|";
+	}
+	else {
+		std::cout << std::setw(10) << this->_firstName;
+		std::cout << "|";
+	}
+	if (this->_lastName.size() > 10) {
+		std::cout << this->_lastName.substr(0, 9) << ".";
+		std::cout << "|";
+	}
+	else {
+		std::cout << std::setw(10) << this->_lastName;
+		std::cout << "|";
+	}
+	if (this->_nickname.size() > 10) {
+		std::cout << this->_nickname.substr(0, 9) << ".";
+		std::cout << "|";
+	}
+	else {
+		std::cout << std::setw(10) << this->_nickname;
+		std::cout << "|";
+	}
+	std::cout << std::endl << std::endl;
+}
+
+/*
+tous les contacts
+*/
+void Contact::displayAllContact() {
 	std::cout << std::left;
-	std::cout << std::setw(16) << "First Name: " << this->_firstName << std::endl;
-	std::cout << std::setw(16) << "Last Name: " << this->_lastName << std::endl;
+	std::cout << std::setw(16) << "First name: " << this->_firstName << std::endl;
+	std::cout << std::setw(16) << "Last name: " << this->_lastName << std::endl;
 	std::cout << std::setw(16) << "Nickname: " << this->_nickname << std::endl;
-	std::cout << std::setw(16) << "Phone Number: " << this->_phoneNumber << std::endl;
-	std::cout << std::setw(16) << "Darkest Secret: " << this->_darkestSecret << std::endl;
+	std::cout << std::setw(16) << "Phone number: " << this->_phoneNumber << std::endl;
+	std::cout << std::setw(16) << "Darkest secret: " << this->_darkestSecret << std::endl;
+	
 }
 
 /* void Contact::replaceContact() {

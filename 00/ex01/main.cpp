@@ -6,15 +6,15 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:33:46 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/10 16:48:40 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:25:27 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "includes/PhoneBook.hpp"
 
 int main()
 {
-	PhoneBook phonebook;
+	PhoneBook repertory;
 	std::string param;
 	
 	while (1)
@@ -27,11 +27,11 @@ int main()
 		}
 		if (param == "ADD")
 		{
-			phonebook.addContact();
+			repertory.addContact();
 		}
 		else if (param == "SEARCH")
 		{
-			phonebook.searchContact();
+			repertory.searchContact();
 		}
 		else if (param == "EXIT")
 		{
@@ -39,7 +39,7 @@ int main()
 		}
 		else
 		{
-			std::cout << "Invalid commant. Either type ADD, SEARCH or EXIT" << std::endl;
+			std::cout << "Invalid command. Either type ADD, SEARCH or EXIT" << std::endl;
 		}
 	}
 }
