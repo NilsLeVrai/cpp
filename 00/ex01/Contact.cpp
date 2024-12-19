@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:56:52 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/19 13:13:10 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:14:44 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void Contact::proceed() {
 	std::getline(std::cin, this->_firstName);
 
 	if (std::cin.eof()) {
-		std::cout << "End of input. Ciao bye" << std::endl;
+		std::cout << "End of input." << std::endl;
 		exit(0);
 	}
 
@@ -102,7 +102,7 @@ void Contact::proceed() {
 	std::getline(std::cin, this->_lastName);
 
 	if (std::cin.eof()) {
-		std::cout << "End of input. Ciao bye" << std::endl;
+		std::cout << "End of input." << std::endl;
 		exit(0);
 	}
 
@@ -134,7 +134,7 @@ void Contact::proceed() {
 	std::getline(std::cin, this->_nickname);
 	
 	if (std::cin.eof()) {
-		std::cout << "End of input. Ciao bye" << std::endl;
+		std::cout << "End of input." << std::endl;
 		exit(0);
 	}
 
@@ -151,7 +151,7 @@ void Contact::proceed() {
 	std::getline(std::cin, this->_phoneNumber);
 	
 	if (std::cin.eof()) {
-		std::cout << "End of input. Ciao bye" << std::endl;
+		std::cout << "End of input." << std::endl;
 		exit(0);
 	}
 
@@ -185,7 +185,7 @@ void Contact::proceed() {
 	std::getline(std::cin, this->_darkestSecret);
 
 	if (std::cin.eof()) {
-		std::cout << "End of input. Ciao bye" << std::endl;
+		std::cout << "End of input." << std::endl;
 		exit(0);
 	}
 
@@ -197,44 +197,4 @@ void Contact::proceed() {
 	break;
 	}
 	
-}
-
-std::string Contact::getFirstName(){
-	return (this->_firstName);
-}
-
-void Contact::setFirstName(std::string firstName){
-	this->_firstName = firstName;
-}
-
-std::string Contact::getLastName(){
-	return (this->_lastName);
-}
-
-void Contact::setLastName(std::string lastName){
-	this->_lastName = lastName;
-}
-
-std::string Contact::getNickName(){
-	return (this->_nickname);
-}
-
-void Contact::setNickName(std::string nickName){
-	this->_nickname = nickName;
-}
-
-std::string Contact::getPhoneNumber(){
-	return (this->_phoneNumber);
-}
-
-void Contact::setPhoneNumber(std::string phoneNumber){
-	this->_phoneNumber = phoneNumber;
-}
-
-std::string Contact::getDarkestSecret(){
-	return (this->_darkestSecret);
-}
-
-void Contact::setDarkestSecret(std:: string darkestSecret){
-	this->_darkestSecret = darkestSecret; 
 }

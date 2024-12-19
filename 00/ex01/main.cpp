@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:33:46 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/19 13:16:41 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/19 14:27:37 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
 		param.clear();
 
         if (!(std::getline(std::cin, param))) {
-            std::cout << "End of input. Ciao bye" << std::endl;
+            std::cout << "End of input." << std::endl;
             break;
         }
         if (param == "ADD") {
