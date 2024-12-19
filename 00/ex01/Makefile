@@ -5,7 +5,6 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 INCLUDES = -I ./includes/
 
 SRC_DIR = .
-BIN_DIR = ./bin
 
 SOURCES =  main.cpp \
 			Contact.cpp \
@@ -23,9 +22,9 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@$(CXX) $(CXXFLAGS) -c $< -o $@ $(INCLUDES)
 
 clean:
-	rm -rf $(BIN_DIR)
+	rm -f $(OBJECTS)
 
-fclean: clean
+fclean: clean	
 	rm -f $(NAME)
 
 re: fclean all
