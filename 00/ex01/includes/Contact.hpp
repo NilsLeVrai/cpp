@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:54:08 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/12 16:35:07 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:39:54 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <cstdlib>
 
 class Contact{
 	private:

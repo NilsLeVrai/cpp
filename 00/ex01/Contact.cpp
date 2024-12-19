@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:56:52 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/12 18:54:04 by niabraha         ###   ########.fr       */
+/*   Updated: 2024/12/19 13:13:10 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,42 +61,142 @@ void Contact::displayAllContact() {
 
 void Contact::proceed() {
 
-	do {
-		std::cout << "Enter first name: ";
-		std::getline(std::cin, this->_firstName);
-		if (this->_firstName.empty()) {
-			std::cout << "First name cannot be empty. Please try again." << std::endl;
-		}
-	} while (this->_firstName.empty());
-	do {
-		std::cout << "Enter last name: ";
-		std::getline(std::cin, this->_lastName);
-		if (this->_lastName.empty()) {
-			std::cout << "Last name cannot be empty. Please try again." << std::endl;
+	std::string param;
+
+	/* First name */
+	
+	while (true) {
+	std::cout << "Enter first name: ";
+	std::getline(std::cin, this->_firstName);
+
+	if (std::cin.eof()) {
+		std::cout << "End of input. Ciao bye" << std::endl;
+		exit(0);
+	}
+
+	if (this->_firstName.empty()) {
+		std::cout << "First name cannot be empty. Please try again." << std::endl;
+		continue;
+	}
+
+	bool hasDigit = false;
+	for (size_t i = 0; i < this->_firstName.size(); i++) {
+		if (std::isdigit(this->_firstName[i])) {
+			hasDigit = true;
+			break;
 		}
 	}
-	while (this->_lastName.empty());
-	do {
-		std::cout << "Enter nickname: ";
-		std::getline(std::cin, this->_nickname);
-		if (this->_nickname.empty()) {
-			std::cout << "Nickname cannot be empty. Please try again." << std::endl;
+
+	if (hasDigit) {
+		std::cout << "First name cannot contain digits. Please try again." << std::endl;
+		this->_firstName.clear();
+		continue;
+	}
+
+	break;
+	}
+
+	/* Last name */
+	while (true) {
+	std::cout << "Enter last name: ";
+	std::getline(std::cin, this->_lastName);
+
+	if (std::cin.eof()) {
+		std::cout << "End of input. Ciao bye" << std::endl;
+		exit(0);
+	}
+
+	if (this->_lastName.empty()) {
+		std::cout << "Last name cannot be empty. Please try again." << std::endl;
+		continue;
+	}
+
+	bool hasDigit = false;
+	for (size_t i = 0; i < this->_lastName.size(); i++) {
+		if (std::isdigit(this->_lastName[i])) {
+			hasDigit = true;
+			break;
 		}
-	} while (this->_nickname.empty());
-	do {
-		std::cout << "Enter phone number: ";
-		std::getline(std::cin, this->_phoneNumber);
-		if (this->_phoneNumber.empty()) {
-			std::cout << "Phone number cannot be empty. Please try again." << std::endl;
+	}
+
+	if (hasDigit) {
+		std::cout << "Last name cannot contain digits. Please try again." << std::endl;
+		this->_lastName.clear();
+		continue;
+	}
+
+	break;
+	}
+	
+	/* Nickname */
+	while (true) {
+	std::cout << "Enter nickname: ";
+	std::getline(std::cin, this->_nickname);
+	
+	if (std::cin.eof()) {
+		std::cout << "End of input. Ciao bye" << std::endl;
+		exit(0);
+	}
+
+	if (this->_nickname.empty()) {
+		std::cout << "Nickname cannot be empty. Please try again." << std::endl;
+		continue;
+	}
+	break;
+	}
+
+	/* Phone number */
+	while (true) {
+	std::cout << "Enter phone number: ";
+	std::getline(std::cin, this->_phoneNumber);
+	
+	if (std::cin.eof()) {
+		std::cout << "End of input. Ciao bye" << std::endl;
+		exit(0);
+	}
+
+	if (this->_phoneNumber.empty()) {
+		std::cout << "Phone number cannot be empty. Please try again." << std::endl;
+		continue;
+	}
+
+	bool hasDigit = true;
+
+	for (size_t i = 0; i < this->_phoneNumber.size(); i++) {
+		if (!std::isdigit(this->_phoneNumber[i])) {
+			hasDigit = false;
+			break;
 		}
-	} while (this->_phoneNumber.empty());
-	do {
-		std::cout << "Enter darkest secret: ";
-		std::getline(std::cin, this->_darkestSecret);
-		if (this->_darkestSecret.empty()) {
-			std::cout << "Darkest secret cannot be empty. Please try again." << std::endl;
-		}
-	} while (this->_darkestSecret.empty());
+	}
+
+	if (!hasDigit) {
+		std::cout << "Phone number cannot contain letters. Please try again." << std::endl;
+		this->_phoneNumber.clear();
+		continue;
+	}
+
+	break;
+	}
+
+	/* Darkest secret */
+
+	while (true) {
+	std::cout << "Enter darkest secret: "; 
+	std::getline(std::cin, this->_darkestSecret);
+
+	if (std::cin.eof()) {
+		std::cout << "End of input. Ciao bye" << std::endl;
+		exit(0);
+	}
+
+	if (this->_darkestSecret.empty()) {
+		std::cout << "Darkest secret cannot be empty. Please try again." << std::endl;
+		continue;
+	}
+
+	break;
+	}
+	
 }
 
 std::string Contact::getFirstName(){
