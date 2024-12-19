@@ -1,20 +1,37 @@
-NAME = megaphone
+NAME = Bank
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
-SRCS = megaphone.cpp
-OBJS = $(SRCS:.cpp=.o)
+
+INCLUDES = -I ./includes/
+
+SRC_DIR = .
+
+SOURCES =  Account.cpp \
+			tests.cpp
+	
+OBJECTS = $(SOURCES:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
+
+$(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@ $(INCLUDES)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJECTS)
 
-fclean: clean
-	rm -f $(NAME) $(OBJS)
+fclean: clean	
+	rm -f $(NAME)
 
 re: fclean all
+
+nils: fclean
+	cd ..
+	git add .
+	git commit -m "$(m)"
+	git push
 
 .PHONY: all clean fclean re
